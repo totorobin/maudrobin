@@ -1,4 +1,4 @@
-const BASE = '/wp-json/wp/v2'
+const BASE = `${import.meta.env.VITE_WP_URL ?? ''}/wp-json/wp/v2`
 
 export async function fetchPageBySlug(slug) {
   const res = await fetch(`${BASE}/pages?slug=${slug}`)

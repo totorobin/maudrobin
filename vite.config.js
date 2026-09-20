@@ -6,11 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/wp-json': {
-        target: 'http://eqbqyvl.cluster131.hosting.ovh.net',
+        target: 'https://wp.maudrobin.fr',
         changeOrigin: true,
       },
       '/wp-content': {
-        target: 'http://eqbqyvl.cluster131.hosting.ovh.net',
+        target: 'https://wp.maudrobin.fr',
         changeOrigin: true,
       },
     },

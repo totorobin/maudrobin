@@ -1,5 +1,5 @@
 const SITE_NAME = 'Maud Robin'
-const BASE_URL = 'https://maudrobin.fr'
+const BASE_URL = 'https://site.maudrobin.fr'
 
 function setMeta(name, content, attr = 'name') {
   if (!content) return

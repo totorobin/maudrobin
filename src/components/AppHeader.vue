@@ -39,7 +39,7 @@ import { ref } from 'vue'
 
 const menuOpen = ref(false)
 const submenuOpen = ref(false)
-const logoUrl = '/wp-content/uploads/2026/09/Nom-en-logo.jpg'
+const logoUrl = `${import.meta.env.VITE_WP_URL ?? ''}/wp-content/uploads/2026/09/Nom-en-logo.jpg`
 </script>
 
 <style scoped>

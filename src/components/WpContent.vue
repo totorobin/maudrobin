@@ -37,7 +37,7 @@ function handleClick(event) {
   let path = null
   try {
     const url = new URL(href)
-    if (url.hostname === 'maudrobin.fr' || url.hostname === 'eqbqyvl.cluster131.hosting.ovh.net') {
+    if (url.hostname === 'maudrobin.fr' || url.hostname === 'wp.maudrobin.fr' || url.hostname === 'eqbqyvl.cluster131.hosting.ovh.net') {
       path = url.pathname
     }
   } catch {
