@@ -17,7 +17,7 @@ onMounted(() => {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Maud Robin',
-    url: 'https://site.maudrobin.fr',
+    url: 'https://maudrobin.fr',
     telephone: '+33650641887',
     address: {
       '@type': 'PostalAddress',

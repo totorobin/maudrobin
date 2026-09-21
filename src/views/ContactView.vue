@@ -1,6 +1,6 @@
 <template>
   <main class="page-content">
-    <div v-if="loading" class="loading">Chargement…</div>
+    <AppSpinner v-if="loading" />
     <div v-else-if="error" class="error">{{ error }}</div>
     <WpContent v-else :html="html" />
   </main>
@@ -9,6 +9,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import WpContent from '../components/WpContent.vue'
+import AppSpinner from '../components/AppSpinner.vue'
 import { fetchPageBySlug } from '../api/wordpress.js'
 import { useSeo } from '../composables/useSeo.js'
 

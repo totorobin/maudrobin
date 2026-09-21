@@ -3,7 +3,7 @@
     <div class="back-link">
       <RouterLink to="/">← Retour</RouterLink>
     </div>
-    <div v-if="loading" class="loading">Chargement…</div>
+    <AppSpinner v-if="loading" />
     <div v-else-if="error" class="error">{{ error }}</div>
     <WpContent v-else :html="html" />
   </main>
@@ -13,6 +13,7 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import WpContent from '../components/WpContent.vue'
+import AppSpinner from '../components/AppSpinner.vue'
 import { fetchPageBySlug } from '../api/wordpress.js'
 import { useSeo } from '../composables/useSeo.js'
 

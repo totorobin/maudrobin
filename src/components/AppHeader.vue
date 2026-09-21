@@ -9,9 +9,9 @@
         <RouterLink to="/particuliers" class="nav-item" @click="menuOpen = false">Particuliers</RouterLink>
         <RouterLink to="/avec-les-chevaux" class="nav-item" @click="menuOpen = false">Avec les chevaux</RouterLink>
 
-        <div class="nav-item has-submenu" @mouseenter="submenuOpen = true" @mouseleave="submenuOpen = false">
+        <div class="nav-item has-submenu" @mouseenter="openSubmenu" @mouseleave="closeSubmenuDelayed">
           <RouterLink to="/entreprises" @click="menuOpen = false">Entreprises</RouterLink>
-          <span class="chevron">▾</span>
+          <span class="chevron" @click.stop="submenuOpen = !submenuOpen">▾</span>
           <div class="submenu" v-show="submenuOpen">
             <RouterLink to="/equicoaching-en-bretagne" class="submenu-item" @click="menuOpen = false; submenuOpen = false">
               Equicoaching en Bretagne
@@ -40,6 +40,15 @@ import { ref } from 'vue'
 const menuOpen = ref(false)
 const submenuOpen = ref(false)
 const logoUrl = `${import.meta.env.VITE_WP_URL ?? ''}/wp-content/uploads/2026/09/Nom-en-logo.jpg`
+
+let closeTimer = null
+function openSubmenu() {
+  clearTimeout(closeTimer)
+  submenuOpen.value = true
+}
+function closeSubmenuDelayed() {
+  closeTimer = setTimeout(() => { submenuOpen.value = false }, 150)
+}
 </script>
 
 <style scoped>
@@ -119,6 +128,8 @@ const logoUrl = `${import.meta.env.VITE_WP_URL ?? ''}/wp-content/uploads/2026/09
   font-size: 10px;
   color: #888;
   line-height: 1;
+  cursor: pointer;
+  padding: 4px;
 }
 
 .submenu {
@@ -226,6 +237,7 @@ const logoUrl = `${import.meta.env.VITE_WP_URL ?? ''}/wp-content/uploads/2026/09
   }
 
   .submenu {
+    display: block !important;
     position: static;
     box-shadow: none;
     border: none;
