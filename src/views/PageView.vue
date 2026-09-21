@@ -7,31 +7,38 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import WpContent from '../components/WpContent.vue'
 import AppSpinner from '../components/AppSpinner.vue'
 import { fetchPageBySlug } from '../api/wordpress.js'
 import { useSeo } from '../composables/useSeo.js'
 
+const route = useRoute()
 const html = ref('')
 const loading = ref(true)
 const error = ref(null)
 
-onMounted(async () => {
+async function loadPage() {
+  loading.value = true
+  error.value = null
   try {
-    const page = await fetchPageBySlug('contact')
+    const page = await fetchPageBySlug(route.meta.slug)
     html.value = page?.content?.rendered ?? ''
     useSeo({
       title: page?.title?.rendered,
       description: page?.excerpt?.rendered,
-      path: '/contact',
+      path: route.path,
     })
   } catch (e) {
     error.value = 'Impossible de charger la page.'
   } finally {
     loading.value = false
   }
-})
+}
+
+onMounted(loadPage)
+watch(() => route.path, loadPage)
 </script>
 
 <style scoped>
