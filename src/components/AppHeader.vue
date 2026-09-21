@@ -246,6 +246,8 @@ function closeSubmenuDelayed() {
     width: 100%;
   }
 
+  .chevron { display: none; }
+
   .submenu-item {
     padding-left: 32px;
   }
