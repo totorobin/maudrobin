@@ -1,0 +1,557 @@
+/* ============================================================
+   Mise en page WordPress — styles extraits des pages maudrobin.fr
+   Ce fichier remplace tous les styles inline des pages WordPress.
+   Les pages WP doivent utiliser les classes ci-dessous au lieu
+   d'attributs style="...".
+   ============================================================ */
+
+/* ── Design tokens ────────────────────────────────────────── */
+:root {
+  --maud-blue:        #183a63;
+  --maud-gold:        #b89a5a;
+  --maud-text:        #444444;
+  --maud-text-mid:    #555555;
+  --maud-text-light:  #666666;
+  --maud-text-faint:  #777777;
+  --maud-bg-cream:    #faf9f6;
+  --maud-bg-blue:     #f2f5f8;
+  --maud-border:      #dddddd;
+  --maud-white:       #ffffff;
+
+  /* Largeur du contenu (élargi par rapport aux 645px WordPress) */
+  --maud-content-width: 900px;
+  --maud-wide-width:    1200px;
+  --wp--style--block-gap: 1.2rem;
+}
+
+/* ============================================================
+   CONTENEURS & MISE EN PAGE
+   ============================================================ */
+
+/* Conteneur principal de chaque page
+   Remplace : style="max-width:900px; margin:0 auto; padding:25px 20px 55px;
+              color:#444444; font-size:16px; line-height:1.75;" */
+.maud-wrapper {
+  max-width: var(--maud-content-width);
+  margin: 0 auto;
+  padding: 25px 20px 55px;
+  color: var(--maud-text);
+  font-size: 16px;
+  line-height: 1.75;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* En-tête de section centré
+   Remplace : style="text-align:center; padding:15px 10px 42px;" */
+.maud-section-header {
+  text-align: center;
+  padding: 18px 10px 40px;
+}
+
+/* Bloc centré plus étroit (720–790px) pour les intros ou CTA
+   Remplace : style="max-width:720px; margin:0 auto;" (et variantes) */
+.maud-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Bloc video responsive 16:9
+   Remplace : style="position:relative; width:100%; padding-bottom:56.25%;
+              height:0; overflow:hidden; background-color:#000000;" */
+.maud-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.maud-video iframe,
+.maud-video embed,
+.maud-video object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================================
+   TYPOGRAPHIE
+   ============================================================ */
+
+/* Titre principal H1 (30px)
+   Remplace : style="color:#183a63; font-size:30px; line-height:1.25;
+              font-weight:500; margin:0 0 14px;" */
+.maud-title-xl {
+  color: var(--maud-blue);
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+/* Titre de section H2 (25px)
+   Remplace : style="color:#183a63; font-size:25px; line-height:1.35;
+              font-weight:500; margin:0 0 12px;" */
+.maud-title-lg {
+  color: var(--maud-blue);
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+/* Titre de carte H3 (22px)
+   Remplace : style="color:#183a63; font-size:22px; line-height:1.4;
+              font-weight:500; margin:0 0 10px;" */
+.maud-title-md {
+  color: var(--maud-blue);
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+/* Titre secondaire H4 (19–21px)
+   Remplace : style="color:#183a63; font-size:21px; font-weight:500;
+              margin:0 0 10px;" */
+.maud-title-sm {
+  color: var(--maud-blue);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+/* Sous-titre italique
+   Remplace : style="font-size:17px; color:#666666; font-style:italic;
+              margin:0 0 28px;" */
+.maud-subtitle {
+  font-size: 17px;
+  color: var(--maud-text-light);
+  font-style: italic;
+  margin: 0 0 28px;
+}
+
+/* Texte d'introduction (plus grand)
+   Remplace : style="font-size:18px; line-height:1.75; color:#183a63;
+              font-weight:500; margin:0 0 20px;" */
+.maud-intro {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--maud-blue);
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+/* Texte italique de citation
+   Remplace : style="font-style:italic; font-size:16px; color:#555555;
+              line-height:1.7; margin:0 0 20px;" */
+.maud-quote {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--maud-text-mid);
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+/* Texte fin (mentions, légendes)
+   Remplace : style="font-size:14px; font-style:italic; color:#777777;" */
+.maud-caption {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--maud-text-faint);
+  margin: 0;
+}
+
+/* Légende d'image sous photo
+   Remplace : style="text-align:center; color:#183a63; font-size:15px;
+              font-style:italic; margin:12px 0 0;" */
+.maud-img-caption {
+  text-align: center;
+  color: var(--maud-blue);
+  font-size: 15px;
+  font-style: italic;
+  margin: 12px 0 0;
+}
+
+/* ── Séparateur doré ──────────────────────────────────────── */
+/* Remplace : style="width:45px; height:2px; background-color:#b89a5a;
+              margin:0 auto 30px;" */
+.maud-divider {
+  width: 45px;
+  height: 2px;
+  background-color: var(--maud-gold);
+  margin: 0 auto 30px;
+  border: none;
+}
+
+/* ============================================================
+   CARTES & BLOCS
+   ============================================================ */
+
+/* Carte fond crème avec bordure gauche dorée
+   Remplace : style="background-color:#faf9f6; border-left:3px solid #b89a5a;
+              padding:28px 24px; margin-bottom:24px;" */
+.maud-card {
+  background-color: var(--maud-bg-cream);
+  border-left: 3px solid var(--maud-gold);
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+/* Carte fond bleu-gris avec bordure gauche dorée
+   Remplace : style="background-color:#f2f5f8; border-left:3px solid #b89a5a;
+              padding:28px 24px; margin-bottom:24px;" */
+.maud-card-blue {
+  background-color: var(--maud-bg-blue);
+  border-left: 3px solid var(--maud-gold);
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+/* Variante arrondie à droite (pages chevaux)
+   Remplace : style="border-left:3px solid #b89a5a; border-radius:0 12px 12px 0;" */
+.maud-card-rounded,
+.maud-card-blue-rounded {
+  border-radius: 0 12px 12px 0;
+}
+
+/* Bloc CTA fond bleu foncé (appel à l'action)
+   Remplace : style="text-align:center; background-color:#183a63;
+              padding:38px 30px;" */
+.maud-cta-block {
+  text-align: center;
+  background-color: var(--maud-blue);
+  padding: 38px 30px;
+  margin: 0 0 50px;
+  box-sizing: border-box;
+}
+
+/* Texte blanc dans un bloc CTA
+   Remplace : style="color:#ffffff; font-size:20px; line-height:1.55;
+              font-style:italic; margin:0 auto 25px;" */
+.maud-cta-text {
+  color: var(--maud-white);
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 auto 20px;
+  max-width: 680px;
+}
+
+/* Lien blanc souligné dans CTA
+   Remplace : style="color:#ffffff; text-decoration:underline;" */
+.maud-cta-block a {
+  color: var(--maud-white);
+  text-decoration: underline;
+}
+
+/* ── Ligne de séparation légère ──────────────────────────── */
+/* Remplace : style="border-bottom:1px solid #dddddd; padding:13px 0;" */
+.maud-row-sep {
+  border-bottom: 1px solid var(--maud-border);
+  padding: 13px 0;
+  margin: 0;
+}
+
+/* ── Bloc timeline / citation côté gauche ────────────────── */
+/* Remplace : style="border-left:2px solid #b89a5a; padding-left:24px;" */
+.maud-timeline-item {
+  border-left: 2px solid var(--maud-gold);
+  padding-left: 24px;
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+
+/* Bouton principal bleu
+   Remplace : style="display:inline-flex !important; align-items:center !important;
+              justify-content:center !important; text-align:center !important;
+              vertical-align:middle; box-sizing:border-box; min-height:44px;
+              background-color:#183a63; color:#ffffff !important;
+              padding:10px 22px; text-decoration:none !important;
+              border-radius:3px; font-size:13px; font-weight:600;
+              line-height:1.2 !important;" */
+.maud-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-height: 44px;
+  background-color: var(--maud-blue);
+  color: var(--maud-white);
+  padding: 10px 22px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: none;
+  cursor: pointer;
+}
+
+.maud-btn:hover {
+  background-color: #122d50;
+  color: var(--maud-white);
+}
+
+/* Bouton secondaire contour bleu
+   Remplace : style="...border:1px solid #183a63; color:#183a63 !important;..." */
+.maud-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-height: 44px;
+  border: 1px solid var(--maud-blue);
+  color: var(--maud-blue);
+  padding: 10px 22px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.maud-btn-outline:hover {
+  background-color: var(--maud-bg-blue);
+}
+
+/* ============================================================
+   IMAGES — centrage systématique
+   ============================================================ */
+
+/* Toutes les images dans le contenu WP sont centrées par défaut */
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-content figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.wp-content figcaption {
+  font-size: 0.85em;
+  color: var(--maud-text-faint);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* wp-block-image */
+.wp-content .wp-block-image {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.wp-content .wp-block-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* aligncenter / alignnone → toujours centré */
+.wp-content .aligncenter,
+.wp-content .alignnone,
+.wp-content img.aligncenter,
+.wp-content img.alignnone {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.wp-content .wp-block-image.alignwide img,
+.wp-content .wp-block-image.alignfull img {
+  width: 100%;
+}
+
+.wp-content .wp-block-image .alignleft {
+  float: left;
+  margin: 0.5em 1.5em 0.5em 0;
+}
+
+.wp-content .wp-block-image .alignright {
+  float: right;
+  margin: 0.5em 0 0.5em 1.5em;
+}
+
+.wp-content .wp-block-image::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* ============================================================
+   BLOCS WORDPRESS (block-library)
+   ============================================================ */
+
+/* Conteneur principal WP */
+.wp-content {
+  max-width: var(--maud-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* Alignements larges */
+.wp-content .alignwide {
+  max-width: var(--maud-wide-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.wp-content .alignfull {
+  max-width: 100vw;
+  width: 100%;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+/* Colonnes */
+.wp-content .wp-block-columns {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wp--style--block-gap);
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 782px) {
+  .wp-content .wp-block-columns {
+    flex-wrap: nowrap;
+  }
+
+  .wp-content .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .wp-content .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column[style*="flex-basis"] {
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 781px) {
+  .wp-content .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 100% !important;
+  }
+}
+
+.wp-content .wp-block-columns.are-vertically-aligned-top    { align-items: flex-start; }
+.wp-content .wp-block-columns.are-vertically-aligned-center { align-items: center; }
+.wp-content .wp-block-columns.are-vertically-aligned-bottom { align-items: flex-end; }
+
+.wp-content .wp-block-column {
+  flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Galerie */
+.wp-content .wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem auto;
+  justify-content: center;
+}
+
+.wp-content .wp-block-gallery .wp-block-image {
+  margin: 0;
+  flex: 1 1 200px;
+}
+
+.wp-content .wp-block-gallery .wp-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Boutons WP natifs */
+.wp-content .wp-block-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.wp-content .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Séparateur WP */
+.wp-content .wp-block-separator {
+  border: none;
+  border-top: 1px solid #e8e0d0;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+/* ── Espacement des blocs ─────────────────────────────────── */
+.wp-content > * + * {
+  margin-top: var(--wp--style--block-gap);
+}
+
+/* ── Typographie de base ──────────────────────────────────── */
+.wp-content p  { line-height: 1.75; margin: 0 0 1rem; }
+.wp-content ul,
+.wp-content ol { padding-left: 1.5em; line-height: 1.75; }
+
+/* ── Masquer l'extrait WP ─────────────────────────────────── */
+.wp-content .wp-block-post-excerpt {
+  display: none;
+}
+
+/* ── Responsive mobile ────────────────────────────────────── */
+@media (max-width: 600px) {
+  .wp-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .maud-wrapper {
+    padding: 16px 16px 40px;
+  }
+
+  .maud-title-xl { font-size: 24px; }
+  .maud-title-lg { font-size: 21px; }
+  .maud-title-md { font-size: 19px; }
+
+  .maud-cta-block {
+    padding: 28px 20px;
+  }
+}

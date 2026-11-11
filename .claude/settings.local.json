@@ -4,7 +4,11 @@
       "WebFetch(domain:eqbqyvl.cluster131.hosting.ovh.net)",
       "Bash(curl -sk \"http://eqbqyvl.cluster131.hosting.ovh.net/wp-json/wp/v2/pages?per_page=100\")",
       "Bash(python3 -c \"import json,sys; pages=json.load\\(sys.stdin\\); [print\\(p['id'], p['slug'], p['title']['rendered']\\) for p in pages]\")",
-      "Bash(node -e \"let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{ const p=JSON.parse\\(d\\); p.forEach\\(x=>console.log\\(x.id, x.slug, x.title.rendered\\)\\); }\\)\")"
+      "Bash(node -e \"let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{ const p=JSON.parse\\(d\\); p.forEach\\(x=>console.log\\(x.id, x.slug, x.title.rendered\\)\\); }\\)\")",
+      "WebFetch(domain:wp.maudrobin.fr)",
+      "Bash(curl -s \"https://wp.maudrobin.fr/wp-json/wp/v2/pages?slug=contact\")",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\(data[0]['content']['rendered']\\)\")",
+      "Bash(node -e \"let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{ const data=JSON.parse\\(d\\); console.log\\(data[0].content.rendered\\); }\\)\")"
     ]
   }
 }

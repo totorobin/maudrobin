@@ -61,14 +61,7 @@ function handleClick(event) {
 </script>
 
 <style>
-.wp-content img {
-  max-width: 100%;
-  height: auto;
-}
 .wp-content a {
   cursor: pointer;
-}
-.wp-content .wp-block-post-excerpt {
-  display: none;
 }
 </style>
