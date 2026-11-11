@@ -19,8 +19,8 @@
   --maud-white:       #ffffff;
 
   /* Largeur du contenu (élargi par rapport aux 645px WordPress) */
-  --maud-content-width: 900px;
-  --maud-wide-width:    1200px;
+  --maud-content-width: 1100px;
+  --maud-wide-width:    1400px;
   --wp--style--block-gap: 1.2rem;
 }
 
@@ -52,7 +52,7 @@
 /* Bloc centré plus étroit (720–790px) pour les intros ou CTA
    Remplace : style="max-width:720px; margin:0 auto;" (et variantes) */
 .maud-narrow {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -87,6 +87,7 @@
    Remplace : style="color:#183a63; font-size:30px; line-height:1.25;
               font-weight:500; margin:0 0 14px;" */
 .maud-title-xl {
+  text-align: center;
   color: var(--maud-blue);
   font-size: 30px;
   line-height: 1.25;
@@ -98,6 +99,7 @@
    Remplace : style="color:#183a63; font-size:25px; line-height:1.35;
               font-weight:500; margin:0 0 12px;" */
 .maud-title-lg {
+  text-align: center;
   color: var(--maud-blue);
   font-size: 25px;
   line-height: 1.35;
