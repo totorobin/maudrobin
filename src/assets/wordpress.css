@@ -231,7 +231,7 @@
 .maud-cta-block {
   text-align: center;
   background-color: var(--maud-blue);
-  padding: 38px 30px;
+  padding: 16px 20px;
   margin: 0 0 50px;
   box-sizing: border-box;
 }
@@ -241,11 +241,7 @@
               font-style:italic; margin:0 auto 25px;" */
 .maud-cta-text {
   color: var(--maud-white);
-  font-size: 18px;
-  line-height: 1.6;
-  font-style: italic;
-  margin: 0 auto 20px;
-  max-width: 680px;
+  font-size: 16px;
 }
 
 /* Lien blanc souligné dans CTA
